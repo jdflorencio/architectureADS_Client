@@ -1,60 +1,66 @@
-angular.module('appCtrl',['appService'])
-.controller('appCtrl',[ '$mdSidenav', '$stateParams','$rootScope','AppService', 
+/* @ngInject */
+function MainController($mdSidenav) {
+	console.log("principal")
+}
 
-function($mdSidenav, $stateParams, $rootScope) {
+export default MainController
 
-	self = this;
+// angular.module('app',[])
+// .controller('app',[ '$mdSidenav', '$stateParams','$rootScope','AppService', 
 
-    self.siderbar = {
-			home: {
-				title: "Home",
-				href: "/"
-			},
-			Cliente: {
-				title: "Cliente",
-				href: "/clientes"
-			},
-			Produtos: {
-				title: "Produto",
-				href: "/produtos"
-			},
-			notasFiscais: {
-				title: "Notas Fiscais",
-				href: "/notasfiscais"
-			}		
-		}
+// function($mdSidenav, $stateParams, $rootScope) {
 
-    // Update title using rootscope.js
-    self.updateTitle = function() {
-		$rootScope.title = $stateParams.title;
-    }
+// 	self = this;
 
-    // Run updateTitle on each state change
-    $rootScope.$on('$stateChangeSuccess', self.updateTitle);
+// 	console.log('Controller principal')
 
-	self.toggleLeft = function() {
-    	$mdSidenav('left').toggle();
-    }
+//     self.siderbar = {
+// 			home: {
+// 				title: "Home",
+// 				href: "/"
+// 			},
+// 			Cliente: {
+// 				title: "Cliente",
+// 				href: "/clientes"
+// 			},
+// 			Produtos: {
+// 				title: "Produto",
+// 				href: "/produtos"
+// 			},
+// 			notasFiscais: {
+// 				title: "Notas Fiscais",
+// 				href: "/notasfiscais"
+// 			}		
+// 		}
 
-    self.toggleRight = function() {
-    	$mdSidenav('right').toggle();
-	}
+//     // Update title using rootscope.js
+//     self.updateTitle = function() {
+// 		$rootScope.title = $stateParams.title;
+//     }
 
-	self.doTheBack = function() {
-		window.history.back();
-	};
+//     // Run updateTitle on each state change
+//     $rootScope.$on('$stateChangeSuccess', self.updateTitle);
 
-	self.logged = function(){
-	logged = true
-		if(!localStorage.getItem("Authorization") ) {
-			logged = false
+// 	self.toggleLeft = function() {
+//     	$mdSidenav('left').toggle();
+//     }
+
+//     self.toggleRight = function() {
+//     	$mdSidenav('right').toggle();
+// 	}
+
+// 	self.doTheBack = function() {
+// 		window.history.back();
+// 	};
+
+// 	self.logged = function(){
+// 	logged = true
+// 		if(!localStorage.getItem("Authorization") ) {
+// 			logged = false
 			
-		  }
-		  $rootScope.sidebar =  logged
-	}
-	$rootScope.$on('$stateChangeSuccess', self.logged);
+// 		  }
+// 		  $rootScope.sidebar =  logged
+// 	}
+// 	$rootScope.$on('$stateChangeSuccess', self.logged);
 
-}])
-.constant("configURL", {
-	baseURL: "http://127.0.0.1:3333/api"
-})
+// }])
