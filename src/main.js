@@ -6,7 +6,6 @@ import './main.scss'
 import configRoute from './configRoutes'
 import Modulos from './Modules/Modulos'
 
-
 export const app = 'app'
 angular.module('app', [
         'ui.router',
@@ -28,7 +27,6 @@ angular.module('app', [
          console.log('principal')
 
             self = this;
-
 
             self.siderbar = {
                 home: {
