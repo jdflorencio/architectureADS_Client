@@ -12,7 +12,7 @@ angular.module('app', [
         'ngMaterial',
         Modulos
     ])
-    .constant('API', 'http://127.0.0.1:3333')
+    .constant('API', 'http://127.0.0.1:3333/api')
     .config(configRoute)
     .config(function ($mdThemingProvider, $httpProvider) {
         $mdThemingProvider.theme('default')
