@@ -17,8 +17,8 @@ angular.module('app', [
     .config(configRoute)
     .config(function ($mdThemingProvider, $httpProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('blue')
-            .accentPalette('red')
+            .primaryPalette('amber')
+            .accentPalette('amber')
 
     })
     .factory('appService', appService)

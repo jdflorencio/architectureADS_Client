@@ -14,35 +14,43 @@
 <body ng-app="app" ng-controller="appCtrl as app">
   <div class="container ng-cloak">
 
-    
-    
 
-    <header ng-if="app.logged()">
 
-      <md-toolbar class="md-hue-2">
-        <div class="md-toolbar-tools">
-          <!-- <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
-            <md-icon md-font-set="md">menu</md-icon>
-          </md-button> -->
 
-          <h2 flex md-truncate>MyCom</h2>
+    <main>
 
-          <md-button class="md-icon-button" aria-label="Favorite">
-            <md-icon>favorite</md-icon>
-          </md-button>
+      <md-tabs ng-if="app.logged()" class="md-dynamic-height md-border-bottom" md-center-tabs>
+        <md-tab md-icon="home" label="Home">
 
-          <md-button class="md-icon-button" aria-label="More">
-            <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
-          </md-button>
-        </div>
-      </md-toolbar>
-    </header>
-    <main layout-margin>
-      <div ui-view id="main"></div>
+          <md-content class="md-padding">
+            <div ui-view id="main"></div>
+          </md-content>
+
+        </md-tab>
+        <md-tab label="Cadastros">
+          <md-content>
+            <md-toolbar>
+              <div class="md-toolbar-tools">Realize os cadastro necessarios</div>
+            </md-toolbar>
+            <!-- <h2 class="md-display-1">Tab Two</h2> -->
+            <div ui-view="cadastro" id="main"></div>
+
+          </md-content>
+        </md-tab>
+        <md-tab label="Vendas">
+          <md-content >
+            <md-toolbar>
+              <div class="md-toolbar-tools">Suas Vendas</div>
+            </md-toolbar>
+            <!-- <h2 class="md-display-1">Tab Two</h2> -->
+            <div ui-view="vendas" id="main"></div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+      <div ui-view="login" id="main"></div>
 
     </main>
-    <aside></aside>
-    <footer></footer>
+
   </div>
 </body>
 

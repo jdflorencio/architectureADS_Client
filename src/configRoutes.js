@@ -32,11 +32,15 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
     $stateProvider
         .state('home', {
             url: '/',
-            component: 'home'
+            component: 'home'     
         })
         .state('login', {
             url: '/login',
-            component: 'login'
+            views: {
+                'login': {
+                    component: 'login'
+                },                
+            }
         })
 }
 
