@@ -1,20 +1,24 @@
 @use "angular-material/angular-material.css";
-html, body {
-    margin:0;
+
+html,
+body {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     background: #7159c1;
 }
+
 .container {
     display: grid;
-    grid-template-columns: 1fr ;
-    grid-template-rows: 8vh 85vh 10vh;
-    grid-template-areas: "h h" "m m" "f f";
+    grid-template-columns: 1fr;
+    grid-template-rows: 8vh 75vh 7vh;
+    grid-template-areas: "h h""m m""f f";
 }
 
 header {
     grid-area: h;
 }
+
 main {
     grid-area: m;
 }
@@ -25,24 +29,29 @@ main {
 // }
 
 footer {
-    background: yellow;    
+    background: yellow;
     grid-area: f;
-    
 }
 
-.login-card {    
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
+.login {
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
-.login-card md-card-content{
+
+.login-card {
     display: flex;
     flex-direction: column;
-    align-items: center;   
+    // max-width: 400px;
+}
+
+.login-card md-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .login-card .button-confirme {
-   align-self: center;
-   min-width: 100px;
+    align-self: center;
+    min-width: 100px;
 }
-

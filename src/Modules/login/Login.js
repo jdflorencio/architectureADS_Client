@@ -5,6 +5,7 @@ function LoginController($http, $state, API, appService) {
 
   self.usuario = "joaodiego@gmail.com"
   self.password = 123456
+  localStorage.removeItem('Authorization')
 
   self.conectar = function () {
   
@@ -20,11 +21,8 @@ function LoginController($http, $state, API, appService) {
           $state.go('home')
         }
       })
-  }
-
- 
+  } 
 }
-
 
 export const LoginComponent = {
   controller: LoginController,

@@ -70,15 +70,13 @@ angular.module('app', [
             };
 
             self.logged = function () {
-                logged = true
-                if (!localStorage.getItem("Authorization")) {
+                console.log('asdasdasd')
+                let logged = false
+                if (localStorage.getItem("Authorization")) {
                     logged = true
-
                 }
-                $rootScope.sidebar = logged
+                return logged
             }
-            $rootScope.$on('$stateChangeSuccess', self.logged);
-
         }
     ])
     .config(function($mdIconProvider) {

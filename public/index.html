@@ -12,15 +12,18 @@
 </head>
 
 <body ng-app="app" ng-controller="appCtrl as app">
-  <div class="container">
+  <div class="container ng-cloak">
 
-    <header ng-show="false">
+    
+    
+
+    <header ng-if="app.logged()">
 
       <md-toolbar class="md-hue-2">
         <div class="md-toolbar-tools">
-          <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <!-- <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
             <md-icon md-font-set="md">menu</md-icon>
-          </md-button>
+          </md-button> -->
 
           <h2 flex md-truncate>MyCom</h2>
 
