@@ -1,18 +1,13 @@
 import template from './Home.html'
 
-function HomeController($http, HomeService, $state) {
+function HomeController($http, HomeService, $state, $scope) {
     self = this
     HomeService.getAll()
     
-    self.verCidades = function(){
-        $state.go('cidade')
-
-    }
-
-    self.verPessoas = function(){
-        $state.go('pessoa')
-
-    }
+    $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+  $scope.data = [300, 500, 100];
+ 
+   
 }
 
 export const HomeComponent = {

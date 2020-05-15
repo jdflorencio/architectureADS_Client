@@ -1,8 +1,9 @@
 import angular from 'angular'
 import '@uirouter/angularjs'
 import 'angular-material'
+import 'angular-chart.js'
 import appService from './main.services'
-
+ 
 import './main.scss'
 import configRoute from './configRoutes'
 import Modulos from './Modules/Modulos'
@@ -11,7 +12,8 @@ export const app = 'app'
 angular.module('app', [
         'ui.router',
         'ngMaterial',
-        Modulos
+        Modulos,
+        'chart.js'
     ])
     .constant('API', 'http://127.0.0.1:3333/api')
     .config(configRoute)
@@ -82,4 +84,16 @@ angular.module('app', [
     .config(function($mdIconProvider) {
         $mdIconProvider.fontSet('md', 'material-icons')
     })
-    
+
+    // Optional configuration
+  .config(['ChartJsProvider', function (ChartJsProvider) {
+    // Configure all charts
+    ChartJsProvider.setOptions({
+      chartColors: ['#FF5252', '#FF8A80'],
+      responsive: false
+    });
+    // Configure all line charts
+    ChartJsProvider.setOptions('line', {
+      showLines: false
+    });
+  }])

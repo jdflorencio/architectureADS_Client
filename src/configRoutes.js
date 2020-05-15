@@ -10,7 +10,9 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
                 return req
             },
             responseError: function (error) {
-                const { status } = error
+                const {
+                    status
+                } = error
                 switch (status) {
                     case 401:
                         localStorage.removeItem('Authorization')
@@ -32,16 +34,27 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
     $stateProvider
         .state('home', {
             url: '/',
-            component: 'home'     
+            views: {
+                '': {
+                    component: 'home'
+                },
+                'cadastro_view': {
+                    component: 'cadastro'
+                },
+                'vendas': {
+                    component: 'home'
+                }
+            }
         })
         .state('login', {
             url: '/login',
             views: {
                 'login': {
                     component: 'login'
-                },                
+                },
             }
         })
+
 }
 
 export default configRoute
