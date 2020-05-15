@@ -10,9 +10,7 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
                 return req
             },
             responseError: function (error) {
-
                 const { status } = error
-
                 switch (status) {
                     case 401:
                         localStorage.removeItem('Authorization')
@@ -21,7 +19,6 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
                         break
                     case 403:
                         console.info('atual URL:', window.location)
-                        // console.info('atual URL:', $stateProvider)
                         break
                 }
                 return
@@ -30,7 +27,6 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
                 console.warn(" ||| aqui >>>", err)
             }
         }
-
     })
 
     $stateProvider

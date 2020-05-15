@@ -1,6 +1,7 @@
 import angular from 'angular'
 import '@uirouter/angularjs'
 import 'angular-material'
+import appService from './main.services'
 
 import './main.scss'
 import configRoute from './configRoutes'
@@ -20,6 +21,7 @@ angular.module('app', [
             .accentPalette('red')
 
     })
+    .factory('appService', appService)
     .controller('appCtrl', ['$mdSidenav', '$stateParams', '$rootScope',
 
         function ($mdSidenav, $stateParams, $rootScope) {
@@ -79,8 +81,7 @@ angular.module('app', [
 
         }
     ])
-
-
     .config(function($mdIconProvider) {
         $mdIconProvider.fontSet('md', 'material-icons')
     })
+    
