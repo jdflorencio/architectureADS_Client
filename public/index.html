@@ -14,7 +14,12 @@
 <body ng-app="app" ng-controller="appCtrl as app">
   <div class="container ng-cloak">
     <main>
-      <md-tabs ng-if="app.logged()" class="md-dynamic-height md-border-bottom" md-center-tabs>
+
+      
+      <!-- <md-icon>favorite</md-icon> -->
+      
+      <!-- <md-tabs ng-if="app.logged()" class="md-dynamic-height md-border-bottom" md-center-tabs>
+        </md-tab>
         <md-tab md-icon="home" label="Home">
 
           <md-content class="md-padding">
@@ -27,25 +32,22 @@
             <md-toolbar>
               <div class="md-toolbar-tools">Realize os cadastro necessarios</div>
             </md-toolbar>
-            <!-- <h2 class="md-display-1">Tab Two</h2> -->
+            
             <div ui-view="cadastro_view" id="main"></div>
 
           </md-content>
         </md-tab>
         <md-tab label="Vendas">
-          <md-content >
+          <md-content>
             <md-toolbar>
               <div class="md-toolbar-tools">Suas Vendas</div>
             </md-toolbar>
-            <!-- <h2 class="md-display-1">Tab Two</h2> -->
+            
             <div ui-view="vendas" id="main"></div>
           </md-content>
         </md-tab>
-      </md-tabs>
-      <div ui-view="login" id="main"></div>
-
-      
-
+      </md-tabs> -->
+      <div ui-view id="main"></div>
     </main>
 
   </div>

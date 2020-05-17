@@ -1,25 +1,17 @@
 import angular from 'angular'
 
-import {HomeComponent} from './home/Home'
-import HomeService from './home/HomeServices'
+import {GrupoComponent} from './grupo/Grupo'
+import GrupoService from './grupo/GrupoServices'
 
-import {CadastroComponent} from './cadastro/Cadastro'
-import CadastroService from './cadastro/CadastroServices'
-
-import {LoginComponent} from './login/Login'
-import LoginService from './login/LoginServices'
 import SubModulos from './subModules/SubModulos'
 
 const Modulos = 'modulos'
 
 angular.module(Modulos, [
     SubModulos,
-    HomeService,
-    LoginService,
-    CadastroService
+    GrupoService
 ])
-.component('home', HomeComponent)
-.component('login', LoginComponent)
-.component('cadastro', CadastroComponent)
+
+.component('grupo', GrupoComponent)
 
 export default Modulos

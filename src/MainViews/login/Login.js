@@ -5,7 +5,7 @@ function LoginController($http, $state, API, appService) {
 
   self.usuario = "joaodiego@gmail.com"
   self.password = 123456
-  localStorage.removeItem('Authorization')
+  // localStorage.removeItem('Authorization')
 
   self.conectar = function () {
   

@@ -6,12 +6,14 @@ import appService from './main.services'
  
 import './main.scss'
 import configRoute from './configRoutes'
+import Views from './MainViews/MainViews'
 import Modulos from './Modules/Modulos'
 
 export const app = 'app'
 angular.module('app', [
         'ui.router',
         'ngMaterial',
+        Views,
         Modulos,
         'chart.js'
     ])
@@ -24,11 +26,9 @@ angular.module('app', [
 
     })
     .factory('appService', appService)
-    .controller('appCtrl', ['$mdSidenav', '$stateParams', '$rootScope',
+    .controller('appCtrl', ['$mdSidenav', '$stateParams', '$rootScope', '$state',
 
-        function ($mdSidenav, $stateParams, $rootScope) {
-
-         console.log('principal')
+        function ($mdSidenav, $stateParams, $rootScope, $state) {
 
             self = this;
 
@@ -69,16 +69,8 @@ angular.module('app', [
 
             self.doTheBack = function () {
                 window.history.back();
-            };
-
-            self.logged = function () {
-                console.log('asdasdasd')
-                let logged = false
-                if (localStorage.getItem("Authorization")) {
-                    logged = true
-                }
-                return logged
             }
+
         }
     ])
     .config(function($mdIconProvider) {
@@ -89,9 +81,9 @@ angular.module('app', [
   .config(['ChartJsProvider', function (ChartJsProvider) {
     // Configure all charts
     ChartJsProvider.setOptions({
-      chartColors: ['#FF5252', '#FF8A80'],
+      chartColors: ['#44475a', '#ff5555'],
       responsive: false
-    });
+    })
     // Configure all line charts
     ChartJsProvider.setOptions('line', {
       showLines: false

@@ -5,8 +5,8 @@ function CadastroController($http, CadastroService, $state) {
     console.log('cadastro')
     CadastroService.getAll()
     
-    self.verCidades = function(){
-        $state.go('cidade')
+    self.irGrupo = function(){
+        $state.go('grupo')
 
     }
 
