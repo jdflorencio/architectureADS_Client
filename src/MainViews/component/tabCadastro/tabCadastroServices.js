@@ -1,6 +1,6 @@
-const CadastroService = 'cadastroService'
-angular.module(CadastroService, [])
-.factory('CadastroService', function($http){
+const TabCadastroService = 'cadastroService'
+angular.module(TabCadastroService, [])
+.factory('TabCadastroService', function($http){
 
     const services = {}
 
@@ -13,4 +13,4 @@ angular.module(CadastroService, [])
     return services    
 })
 
-export default CadastroService
+export default TabCadastroService

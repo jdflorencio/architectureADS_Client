@@ -1,9 +1,9 @@
-import template from './Cadastro.html'
+import template from './tabCadastro.html'
 
-function CadastroController($http, CadastroService, $state) {
+function TabCadastroController($http, TabCadastroService, $state) {
     self = this
     console.log('cadastro')
-    CadastroService.getAll()
+    TabCadastroService.getAll()
     
     self.irGrupo = function(){
         $state.go('grupo')
@@ -16,8 +16,8 @@ function CadastroController($http, CadastroService, $state) {
     }
 }
 
-export const CadastroComponent = {
-    controller: CadastroController,
+export const TabCadastroComponent = {
+    controller: TabCadastroController,
     controllerAs: 'ctrl',
     template
 }

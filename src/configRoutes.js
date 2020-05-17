@@ -1,14 +1,14 @@
 /* @ngInject */
 function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $injector) {
     // $locationProvider.html5Mode(true).hashPrefix('!')
-    $urlRouterProvider.otherwise(($injector, $location) => {
+    $urlRouterProvider.otherwise('/');
+
+    $urlRouterProvider.rule(function ($injector, $location) {
         if (!localStorage.getItem("Authorization")) {
             $location.path('login')
-        } else {
-            $location.path('/')
+            return false
         }
-    });
-
+    })
 
     $httpProvider.interceptors.push(($injector) => {
         return {
@@ -41,39 +41,24 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
     $stateProvider
         .state('home', {
             url: '/',
-            views: {
-                '': {
-                    component: 'home'
-                },
-                '@cadastro_view': {
-                    component: 'cadastro'
-                },
-                'vendas': {
-                    component: 'home'
-                }
-            }
+            component: 'home'
         })
+        
         .state('login', {
             url: '/login',
             views: {
                 '': {
                     component: 'login'
-                },
+                }
             }
         })
         .state('grupo', {
             url: '/grupo',
             views: {
-                '': {
-                    component: 'home'
-                },
+
                 'cadastro_view': {
                     component: 'grupo'
-                },
-                'vendas': {
-                    component: 'home'
                 }
-
             },
             resolve: {
                 redirectIfNotAuthenticated: teste
@@ -83,7 +68,6 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
     function teste() {
         console.info('estou aqui X')
     }
-
 }
 
 export default configRoute
