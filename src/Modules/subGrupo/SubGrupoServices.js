@@ -1,6 +1,6 @@
-const GrupoService = 'grupoService'
-angular.module(GrupoService, [])
-  .factory('GrupoService', function ($http) {
+const SubGrupoService = 'subGrupoService'
+angular.module(SubGrupoService, [])
+  .factory('SubGrupoService', function ($http) {
 
     const services = {}
 
@@ -13,4 +13,4 @@ angular.module(GrupoService, [])
     return services
   })
 
-export default GrupoService
+export default SubGrupoService

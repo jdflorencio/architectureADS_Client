@@ -54,12 +54,14 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
         })
         .state('grupo', {
             url: '/grupo',
-            views: {
-
-                'cadastro_view': {
-                    component: 'grupo'
-                }
-            },
+            component: 'grupo',
+            resolve: {
+                redirectIfNotAuthenticated: teste
+            }
+        })
+        .state('subgrupo', {
+            url: '/subgrupo',
+            component: 'subgrupo',
             resolve: {
                 redirectIfNotAuthenticated: teste
             }

@@ -7,12 +7,14 @@ function TabCadastroController($http, TabCadastroService, $state) {
     
     self.irGrupo = function(){
         $state.go('grupo')
+    }
 
+    self.irSubgrupo = function(){
+        $state.go('subgrupo')
     }
 
     self.verPessoas = function(){
         $state.go('pessoa')
-
     }
 }
 
