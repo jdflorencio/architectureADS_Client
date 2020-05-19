@@ -19937,6 +19937,10 @@ header {
   grid-area: m;
 }
 
+.form-content .listcontent {
+  background: #424242;
+}
+
 .form-content .button-footer {
   grid-area: b;
 }
