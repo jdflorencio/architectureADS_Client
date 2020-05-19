@@ -21,7 +21,7 @@ angular.module('app', [
     .config(configRoute)
     .config(function ($mdThemingProvider, $httpProvider) {
         $mdThemingProvider.theme('default').dark()
-            // .primaryPalette('blue-grey')
+            .primaryPalette('deep-purple')
             .accentPalette('teal')
 
     })
