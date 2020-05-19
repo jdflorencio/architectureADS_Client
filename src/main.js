@@ -17,12 +17,12 @@ angular.module('app', [
         Modulos,
         'chart.js'
     ])
-    .constant('API', 'http://127.0.0.1:3333/api')
+    .constant('API', 'https://mycom-backend.herokuapp.com/' || 'http://127.0.0.1:3333/api')
     .config(configRoute)
     .config(function ($mdThemingProvider, $httpProvider) {
         $mdThemingProvider.theme('default')
-            .primaryPalette('amber')
-            .accentPalette('amber')
+            .primaryPalette('yellow')
+            .accentPalette('red')
 
     })
     .factory('appService', appService)
