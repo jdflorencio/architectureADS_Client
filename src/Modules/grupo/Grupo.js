@@ -5,12 +5,8 @@ function GrupoController($http, GrupoService, $state) {
     console.log('grupo')
     GrupoService.getAll()
     
-    self.verCidades = function(){
-        $state.go('cidade')
-    }
-
-    self.verPessoas = function(){
-        $state.go('pessoa')
+    self.adicionar = function() {
+        $state.go('grupoform-add')
     }
 
     self.back = function() {

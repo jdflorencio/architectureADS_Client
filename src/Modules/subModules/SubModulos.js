@@ -1,8 +1,16 @@
 import angular from 'angular'
 const SubModulos = 'submodel'
-angular.module(SubModulos, [
-   
-])
+import {
+    GrupoFormComponent
+} from './grupoform/GrupoForm'
 
+import GrupoFormServices  from './grupoform/GrupoFormServices'
+
+angular.module(SubModulos, [
+    GrupoFormServices
+
+    ])
+
+    .component('grupoform', GrupoFormComponent)
 
 export default SubModulos

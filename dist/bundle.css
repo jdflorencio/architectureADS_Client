@@ -19867,7 +19867,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #2196f3;
+  background: #e5e8e8;
 }
 
 .container {
@@ -19920,4 +19920,23 @@ header {
   overflow: auto;
   max-height: 560px;
   background: #fff;
+}
+
+.form-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 7vh 83vh 10vh;
+  grid-template-areas: "t t t" "m m m" "b b b";
+}
+
+.form-content md-toolbar {
+  grid-area: t;
+}
+
+.form-content div {
+  grid-area: m;
+}
+
+.form-content .button-footer {
+  grid-area: b;
 }

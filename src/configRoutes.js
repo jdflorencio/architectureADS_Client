@@ -59,6 +59,10 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
                 redirectIfNotAuthenticated: teste
             }
         })
+        .state('grupoform-add', {
+            url: '/grupo/add',
+            component: 'grupoform'
+        })
         .state('subgrupo', {
             url: '/subgrupo',
             component: 'subgrupo',

@@ -1,107 +1,46 @@
-<md-toolbar >
-  <div class="md-toolbar-tools ">
-    <md-button aria-label="Go Back" ng-click="ctrl.back()">
-      <md-icon>arrow_back</md-icon>
-    </md-button>
-    <h2 flex md-truncate>Grupos</h2>
-    <!-- <md-button class="md-raised md-accent md-hue-3" aria-label="Learn More">
+<div class="form-content">
+
+  <md-toolbar>
+    <div class="md-toolbar-tools ">
+      <md-button aria-label="Go Back" ng-click="ctrl.back()">
+        <md-icon>arrow_back</md-icon>
+      </md-button>
+      <h2 flex md-truncate>Grupos</h2>
+      <!-- <md-button class="md-raised md-accent md-hue-3" aria-label="Learn More">
         Learn More
       </md-button> -->
-    <!-- <md-button class="md-fab md-mini md-hue-3" aria-label="Favorite">
-      <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
-    </md-button> -->
-  </div>
-</md-toolbar>
+      <md-button class="md-fab md-mini md-hue-3 md-primary" aria-label="Favorite">
+        <md-icon>delete_forever</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
 
-<div ng-view="" flex="noshrink" class="docs-ng-view  ng-scope flex-noshrink listcontent" cache-scroll-position="">
-  <div class="doc-content theming ng-scope">
-    <md-list-item class="md-3-line" ng-click="ctrl.irGrupo()">
-      <md-icon>category</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Grupo</h3>
-        <p>Confere maior organização ao cadastro de produto.</p>
-      </div>
-    </md-list-item>
-    <md-divider></md-divider>
+  <div ng-view="" flex="noshrink" class="docs-ng-view  ng-scope flex-noshrink listcontent" cache-scroll-position="">
+    <div class="doc-content theming ng-scope">
+      <md-list>
 
-    <md-list-item class="md-3-line" ng-click="ctrl.irSubgrupo()">
-      <md-icon>group_work</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Subgrupo</h3>
-        <p>Confere maior organização ao cadastro de produto.</p>
-      </div>
-    </md-list-item>
+        <md-list-item ng-repeat="teste in [1,2,3,4,5,6,7] "
+          g-click="goToPerson(person.name, $event)" class="noright">
+          <!-- <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" /> -->
+          <p>Teste</p>
+          <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
+          <md-icon ng-click="doSecondaryAction($event)" aria-label="Send Email" class="md-secondary md-hue-3">edit
+          </md-icon>
+         
+        </md-list-item>
+      </md-list>
 
-    <md-divider></md-divider>
-    <md-list-item class="md-3-line" ng-click="null">
-      <md-icon>account_balance</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Tributos</h3>
-        <p>COnfigure as tributações para inserir nos produtos.</p>
-      </div>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-list-item class="md-3-line" ng-click="null">
-      <md-icon>local_mall</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Produto</h3>
-        <p>Crie sua grade de produtos.</p>
-      </div>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-list-item class="md-3-line" ng-click="null">
-      <md-icon>emoji_people</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Cliente</h3>
-        <p>Adicione novos clientes na sua carteira</p>
-      </div>
-    </md-list-item>
-    <md-list-item class="md-3-line" ng-click="ctrl.irGrupo()">
-      <md-icon>category</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Grupo</h3>
-        <p>Confere maior organização ao cadastro de produto.</p>
-      </div>
-    </md-list-item>
-    <md-divider></md-divider>
-
-    <md-list-item class="md-3-line" ng-click="ctrl.irSubgrupo()">
-      <md-icon>group_work</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Subgrupo</h3>
-        <p>Confere maior organização ao cadastro de produto.</p>
-      </div>
-    </md-list-item>
-
-    <md-divider></md-divider>
-    <md-list-item class="md-3-line" ng-click="null">
-      <md-icon>account_balance</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Tributos</h3>
-        <p>COnfigure as tributações para inserir nos produtos.</p>
-      </div>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-list-item class="md-3-line" ng-click="null">
-      <md-icon>local_mall</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Produto</h3>
-        <p>Crie sua grade de produtos.</p>
-      </div>
-    </md-list-item>
-    <md-divider></md-divider>
-    <md-list-item class="md-3-line" ng-click="null">
-      <md-icon>emoji_people</md-icon>
-      <div class="md-list-item-text" layout="column">
-        <h3>Cliente</h3>
-        <p>Adicione novos clientes na sua carteira</p>
-      </div>
-    </md-list-item>
+    </div>
     <md-button class="md-fab md-fab-bottom-right docs-scroll-fab md-button md-ink-ripple scrolling fixed"
-      aria-label="Add a category" docs-scroll-class="scrolling">
+      aria-label="Add a category" docs-scroll-class="scrolling" ng-click="ctrl.adicionar()">
       <md-icon>add</md-icon>
     </md-button>
 
-
-
   </div>
+  <md-button ng-click="ctrl.salvar()" class="md-raised button-footer md-primary">
+    <md-icon>check</md-icon>
+    todos
+  </md-button>
+
+
+</div>

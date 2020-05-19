@@ -20,9 +20,9 @@ angular.module('app', [
     .constant('API', 'https://mycom-backend.herokuapp.com/api' || 'http://127.0.0.1:3333/api')
     .config(configRoute)
     .config(function ($mdThemingProvider, $httpProvider) {
-        $mdThemingProvider.theme('default')
-            .primaryPalette('yellow')
-            .accentPalette('red')
+        $mdThemingProvider.theme('default').dark()
+            // .primaryPalette('blue-grey')
+            .accentPalette('teal')
 
     })
     .factory('appService', appService)
