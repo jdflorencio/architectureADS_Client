@@ -19905,3 +19905,13 @@ header {
   align-self: center;
   min-width: 100px;
 }
+
+.md-fab.docs-scroll-fab {
+  position: fixed !important;
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+
+.docs-scroll-fab.scrolling {
+  transform: scale(1);
+}
