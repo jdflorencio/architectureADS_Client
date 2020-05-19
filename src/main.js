@@ -23,7 +23,8 @@ angular.module('app', [
         $mdThemingProvider.theme('default').dark()
             .primaryPalette('light-blue')
             .accentPalette('teal')
-
+            // .backgroundPalette("green")
+            
     })
     .factory('appService', appService)
     .controller('appCtrl', ['$mdSidenav', '$stateParams', '$rootScope', '$state',
