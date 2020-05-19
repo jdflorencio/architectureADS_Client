@@ -12,6 +12,10 @@ function GrupoController($http, GrupoService, $state) {
     self.verPessoas = function(){
         $state.go('pessoa')
     }
+
+    self.back = function() {
+        $state.go('home')
+    }
 }
 
 export const GrupoComponent = {
