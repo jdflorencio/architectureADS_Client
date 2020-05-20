@@ -11,11 +11,14 @@ function appService($state, $mdToast) {
                 .hideDelay(3000))
         }
 
+        console.log(resp)
         switch (resp) {
             case 200:
                 self.showSimpleToast(message)
                 break
             case 201:
+                self.showSimpleToast('Recurso Criado!')
+                break
             case 401:
                 self.showSimpleToast('error 401')
 
@@ -29,8 +32,10 @@ function appService($state, $mdToast) {
 
                 break
             case 204:
-            default:
-                self.showSimpleToast('error default')
+                self.showSimpleToast('error 204')
+                break
+
+        
 
 
         }

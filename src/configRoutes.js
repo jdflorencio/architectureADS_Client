@@ -43,7 +43,6 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
             url: '/',
             component: 'home'
         })
-        
         .state('login', {
             url: '/login',
             views: {
@@ -58,6 +57,10 @@ function configRoute($stateProvider, $urlRouterProvider, $locationProvider, $htt
             resolve: {
                 redirectIfNotAuthenticated: teste
             }
+        })
+        .state('grupoform-edit', {
+            url: '/grupo/{add}',
+            component: 'grupoform'
         })
         .state('grupoform-add', {
             url: '/grupo/add',

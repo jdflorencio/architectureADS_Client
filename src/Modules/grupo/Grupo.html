@@ -9,7 +9,7 @@
       <!-- <md-button class="md-raised md-accent md-hue-3" aria-label="Learn More">
         Learn More
       </md-button> -->
-      <md-button class="md-fab md-mini md-hue-3 md-primary" aria-label="Favorite">
+      <md-button class="md-fab md-mini md-hue-3 md-primary" aria-label="Favorite" ng-click="ctrl.showConfirm()">
         <md-icon>delete_forever</md-icon>
       </md-button>
     </div>
@@ -19,14 +19,13 @@
     <div class="doc-content theming ng-scope">
       <md-list>
 
-        <md-list-item ng-repeat="teste in [1,2,3,4,5,6,7] "
-          g-click="goToPerson(person.name, $event)" class="noright">
+        <md-list-item ng-repeat="grupo in ctrl.grupos " 
+        class="noright">
           <!-- <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" /> -->
-          <p>Teste</p>
+          <p>{{grupo.descricao}}</p>
           <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
-          <md-icon ng-click="doSecondaryAction($event)" aria-label="Send Email" class="md-secondary md-hue-3">edit
-          </md-icon>
-         
+          <md-icon ng-click="ctrl.irEditar(grupo.id, $event)" aria-label="EDITAR" class="md-secondary md-hue-3">edit
+          </md-icon>         
         </md-list-item>
       </md-list>
 

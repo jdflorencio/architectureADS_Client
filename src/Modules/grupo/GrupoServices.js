@@ -1,15 +1,19 @@
 const GrupoService = 'grupoService'
 angular.module(GrupoService, [])
-  .factory('GrupoService', function ($http) {
+  .factory('GrupoService', function ($http, API, appService) {
 
     const services = {}
 
     services.getAll = function () {
-      return {
-        msg: "De Servicos",
-        status: 200
-      }
-    }
+      return $http.get(`${API}/grupo`)
+      .then( result => {
+        const {dados} = result.data
+        self.grupos = dados
+        self.marcadosPraRemover = self.grupos
+        console.log(self.marcadosPraRemover)
+      })
+    }   
+
     return services
   })
 

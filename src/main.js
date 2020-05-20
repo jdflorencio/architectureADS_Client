@@ -17,7 +17,7 @@ angular.module('app', [
         Modulos,
         'chart.js'
     ])
-    .constant('API', 'https://mycom-backend.herokuapp.com/api' || 'http://127.0.0.1:3333/api')
+    .constant('API',  'http://127.0.0.1:3333/api') //'https://mycom-backend.herokuapp.com/api'
     .config(configRoute)
     .config(function ($mdThemingProvider, $httpProvider) {
         $mdThemingProvider.theme('default').dark()
