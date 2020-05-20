@@ -83,7 +83,7 @@ angular.module('app', [
     // Configure all charts
     ChartJsProvider.setOptions({
       chartColors: ['#44475a', '#ff5555'],
-      responsive: false
+      responsive: true
     })
     // Configure all line charts
     ChartJsProvider.setOptions('line', {
