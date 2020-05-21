@@ -2,6 +2,7 @@ import template from './GrupoForm.html'
 
 function GrupoFormController(GrupoFormService, $state, $stateParams) {
     self = this
+    self.grupo = {}
     const urlParams = Number.isInteger(parseInt($stateParams.add))
 
     self.actions = {

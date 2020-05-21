@@ -12,10 +12,18 @@ angular.module(GrupoFormService, [])
     }
 
     services.adicionar = function () {
+      
       $http.post(`${API}/grupo`, self.grupo)
         .then(result => {
-          // self.teste = result.data
-          return true
+          const {
+            mensagem
+          } = result.data
+          appService.notificacao(result.status, mensagem)
+          $state.go('grupo')
+        })
+        .catch(error => {
+          console.log(error)
+          // appService.notificacao(error.status, mensagem)
         })
     }
 

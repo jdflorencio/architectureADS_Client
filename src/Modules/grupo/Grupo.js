@@ -35,7 +35,6 @@ function GrupoController($http, GrupoService, $state, $mdDialog, $scope) {
             .ok('Excluir')
             .cancel('Cancelar')
 
-
         const alert = $mdDialog.alert()
             .parent(angular.element(document.querySelector('#popupContainer')))
             .clickOutsideToClose(true)
