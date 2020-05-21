@@ -14,12 +14,9 @@ angular.module(GrupoFormService, [])
     services.adicionar = function () {
       $http.post(`${API}/grupo`, self.grupo)
         .then(result => {
-          self.teste = 'result'
-
-
+          // self.teste = result.data
           return true
         })
-
     }
 
     // services.atualizar = function () {
